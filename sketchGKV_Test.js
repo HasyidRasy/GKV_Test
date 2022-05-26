@@ -1,7 +1,7 @@
 const canvasSketch = require('canvas-sketch');
 
 const settings = {
-  dimensions: [1400, 1000]
+  dimensions: [2800, 1000]
 };
 
 const total_death = ["10", "20", "30", "40", "50", "60", "70", "80", "90"];
@@ -42,6 +42,84 @@ const left_gap = 120;
 
 const grid_gap_X = maks_X / (tahun.length + 1);
 const grid_gap_Y = maks_Y / (total_death.length + 1);
+
+//nyimpen data[jumlah kematian] di tahun
+for(var i = 0; i < data.length; i++){
+
+  switch(data[i][2]){
+    case 2010:
+      if(data[i][1] == "Bencana Alam"){
+        tahun[0][1] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Non Alam"){
+        tahun[0][2] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Sosial"){
+        tahun[0][3] += data[i][3];
+      }
+      break;
+    
+    case 2011:
+      if(data[i][1] == "Bencana Alam"){
+        tahun[1][1] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Non Alam"){
+        tahun[1][2] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Sosial"){
+        tahun[1][3] += data[i][3];
+      }
+      break;
+
+    case 2012:
+      if(data[i][1] == "Bencana Alam"){
+        tahun[2][1] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Non Alam"){
+        tahun[2][2] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Sosial"){
+        tahun[2][3] += data[i][3];
+      }
+      break;
+
+    case 2013:
+      if(data[i][1] == "Bencana Alam"){
+          tahun[3][1] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Non Alam"){
+        tahun[3][2] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Sosial"){
+        tahun[3][3] += data[i][3];
+      }
+      break;
+
+    case 2014:
+      if(data[i][1] == "Bencana Alam"){
+        tahun[4][1] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Non Alam"){
+        tahun[4][2] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Sosial"){
+        tahun[4][3] += data[i][3];
+      }
+      break;
+
+    case 2015:
+      if(data[i][1] == "Bencana Alam"){
+        tahun[5][1] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Non Alam"){
+        tahun[5][2] += data[i][3];
+      }
+      else if(data[i][1] == "Bencana Sosial"){
+        tahun[5][3] += data[i][3];
+      }
+      break;
+  }
+}
 
 const sketch = () => {
   return ({ context, width, height }) => {
@@ -104,85 +182,6 @@ const sketch = () => {
       context.lineTo(maks_X, f);
     }
     context.stroke();
-    
-    //nyimpen data[jumlah kematian] di tahun
-    for(var i = 0; i < data.length; i++){
-      context.save();
-
-      switch(data[i][2]){
-        case 2010:
-          if(data[i][1] == "Bencana Alam"){
-            tahun[0][1] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Non Alam"){
-            tahun[0][2] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Sosial"){
-            tahun[0][3] += data[i][3];
-          }
-          break;
-        
-        case 2011:
-          if(data[i][1] == "Bencana Alam"){
-            tahun[1][1] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Non Alam"){
-            tahun[1][2] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Sosial"){
-            tahun[1][3] += data[i][3];
-          }
-          break;
-
-        case 2012:
-          if(data[i][1] == "Bencana Alam"){
-            tahun[2][1] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Non Alam"){
-            tahun[2][2] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Sosial"){
-            tahun[2][3] += data[i][3];
-          }
-          break;
-
-        case 2013:
-          if(data[i][1] == "Bencana Alam"){
-              tahun[3][1] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Non Alam"){
-            tahun[3][2] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Sosial"){
-            tahun[3][3] += data[i][3];
-          }
-          break;
-
-        case 2014:
-          if(data[i][1] == "Bencana Alam"){
-            tahun[4][1] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Non Alam"){
-            tahun[4][2] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Sosial"){
-            tahun[4][3] += data[i][3];
-          }
-          break;
-
-        case 2015:
-          if(data[i][1] == "Bencana Alam"){
-            tahun[5][1] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Non Alam"){
-            tahun[5][2] += data[i][3];
-          }
-          else if(data[i][1] == "Bencana Sosial"){
-            tahun[5][3] += data[i][3];
-          }
-          break;
-      }
-    }
 
     //bikin bar chart
     const bar_width = grid_gap_X / 4;
