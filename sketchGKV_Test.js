@@ -302,7 +302,7 @@ const sketch = () => {
   function barchart(){
 //bar chart
     //square bracket round edges
-    function squareBracket_top0(l_gap, b_gap, X, Y, left, right, bot, top){
+    function squareBracket_bar(l_gap, b_gap, X, Y, left, right, bot, top){
       context.save();
       context.fillStyle = '#323140';
       context.beginPath();
@@ -319,7 +319,7 @@ const sketch = () => {
       context.fill();
       context.restore();
     }
-    squareBracket_top0(left_gap, bot_gap, maks_X, maks_Y, 135, 240, 95, 20);
+    squareBracket_bar(left_gap, bot_gap, maks_X, maks_Y, 135, 240, 95, 20);
 
     //create label di sumbu x dan y
     context.save();
@@ -726,7 +726,7 @@ const sketch = () => {
   function linechart(){
 //line chart
     //square bracket round edges
-    function squareBracket_top0(l_gap, b_gap, X, Y, left, right, bot, top){
+    function squareBracket_line(l_gap, b_gap, X, Y, left, right, bot, top){
       context.save();
       context.fillStyle = '#323140';
       context.beginPath();
@@ -743,7 +743,7 @@ const sketch = () => {
       context.fill();
       context.restore();
     }
-    squareBracket_top0(line_left_gap, line_bot_gap, line_X, line_Y, 135, 240, 95, 20);
+    squareBracket_line(line_left_gap, line_bot_gap, line_X, line_Y, 135, 240, 95, 20);
 
     //create label di sumbu x dan y
     context.save();
